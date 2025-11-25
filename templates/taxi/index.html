@@ -1,16 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
   <h1>Taxi Home</h1>
-  <p>Welcome to Taxi Service</p>
-  <ol>
-    <li>
-      Number of cars: {{ num_cars }}
-    </li>
-    <li>
-      Number of drivers: {{ num_drivers }}
-    </li>
-    <li>
-      Number of manufacturers: {{ num_manufacturers }}
-    </li>
-  </ol>
+  <p>Welcome to Taxi Service!</p>
+    <h3>Number of cars: <strong>{{ num_cars }}</strong></h3>
+    <h3>Number of drivers:  <strong>{{ num_drivers }}</strong></h3>
+    <h3>Number of manufacturers:  <strong>{{ num_manufacturers }}</strong></h3>
 {% endblock %}

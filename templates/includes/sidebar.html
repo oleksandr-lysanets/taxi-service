@@ -1,25 +1,28 @@
-<ul class="sidebar-nav">
-  {% if user.is_authenticated %}
-		<p style="font-size: 25px;">user: <a class = "main-user" href="{% url 'taxi:driver-detail' user.id %}">{{ user.username }}</a></p>
-    
-		<a href="{% url 'logout' %}">Click here to logout</a>
-	{% else %}
-		<a href="{% url 'login' %}">Login</a>
-	{% endif %}
-	<br>
-  <br>
-  <div class="pages-list">
-    <li style="padding: 15px;">
-      <a class="pages-link" href="{% url 'taxi:index' %}">Home page</a>
+<div class="d-flex justify-content-end mb-3">
+    {% if user.is_authenticated %}
+       <div class="d-flex align-items-center border border-warning border-5 rounded-5 p-2">
+            <p class="mb-0 me-3 text-secondary">
+                USER: 
+                <a class="text-decoration-none fw-bold text-primary" href="{% url 'taxi:driver-detail' user.id %}">{{ user.username }}</a>
+            </p>
+            <a class="btn btn-sm btn-danger" href="{% url 'logout' %}">LOGOUT</a>
+        </div>
+    {% else %}
+        <a class="btn btn-success btn-lg" href="{% url 'login' %}">LOGIN</a>
+    {% endif %}
+</div>
+
+<ul class="nav nav-pills border border-success border-5 p-2 rounded-5">
+    <li class="nav-item me-2 my-2">
+        <a class="nav-link text-primary bg-warning rounded-5" href="{% url 'taxi:index' %}">Home page</a>
     </li>
-    <li style="padding: 15px;">
-      <a class="pages-link" href="{% url 'taxi:manufacturer-list' %}">Manufacturers</a>
+    <li class="nav-item me-2 my-2">
+        <a class="nav-link text-primary bg-warning rounded-5" href="{% url 'taxi:manufacturer-list' %}">Manufacturers</a>
     </li>
-    <li style="padding: 15px;">
-      <a class="pages-link" href="{% url 'taxi:car-list' %}">Cars</a>
+    <li class="nav-item me-2 my-2">
+        <a class="nav-link text-primary bg-warning rounded-5" href="{% url 'taxi:car-list' %}">Cars</a> 
     </li>
-    <li style="padding: 15px;">
-      <a class="pages-link" href="{% url 'taxi:driver-list' %}">Drivers</a>
+    <li class="nav-item me-2 my-2">
+        <a class="nav-link text-primary bg-warning rounded-5" href="{% url 'taxi:driver-list' %}">Drivers</a>
     </li>
-  </div>
 </ul>

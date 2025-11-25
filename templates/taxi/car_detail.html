@@ -5,15 +5,15 @@
 
 {% block content %}
   <div>
-  <h3>Car Details: </h3>
-    <p><strong>Model: {{ car.model }}</strong></p>
+  <h2>Car</h2>
+    <p><strong>Model:</strong> {{ car.model }}</p>
     <p><strong>Manufacturer: </strong>{{ car.manufacturer.name }}</p>
     <p><strong>Country: </strong>{{ car.manufacturer.country }}</p>
     <h3>Driver: </h3>
     {% for driver in car.drivers.all %}
-      <p><strong>Driver username: </strong>{{ driver.username }}</p>
+      <p><strong>username: </strong>{{ driver.username }}</p>
     {% endfor %}
-    <p><a href="{% url 'taxi:car-update' pk=car.id %}">Update car</a></p>
-    <p><a href="{% url 'taxi:car-delete' pk=car.id %}">Delete car</a></p>
+    <a class="btn btn-info" href="{% url 'taxi:car-update' pk=car.id %}">Update car</a>
+    <a class="btn btn-danger" href="{% url 'taxi:car-delete' pk=car.id %}">Delete car</a>
   </div>
 {% endblock %}

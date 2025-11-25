@@ -1,17 +1,34 @@
 body {
-    background-color: rgb(225, 255, 213);
+    position: relative; 
+    min-height: 100vh; 
+    font-size: 40px;
+}
+
+body::before {
+    content: ''; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/taxi-img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.2; 
+    z-index: -1;
 }
 
 .table-simple {
   border-collapse: collapse;
   width: auto;
+  margin: 0 auto;
 }
 
 .table-simple th,
 .table-simple td {
-  border: 1px solid #000;
+  border: 3px solid rgb(4, 0, 255);
   padding: 8px;
-  text-align: left;
 }
 
 .pagination {
@@ -19,48 +36,66 @@ body {
 }
 
 td {
-  background-color: rgb(182, 246, 109);
+  background-color:rgb(255, 193, 7);
 }
 
 th {
-  background-color: blueviolet;
-  color: aliceblue;
+  color: rgb(57, 2, 197);
 }
 
-h2 {
-  color: red;
-  font-size: 40px;
+h2, h1 {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 70px;
+  border-bottom: 10px solid rgb(255, 193, 7);
+  border-radius: 80px;
+}
+
+h3 {
+  color: rgb(0, 0, 0);
+  font-size: 50px;
 }
 
 a {
-  color:rgb(8, 45, 192);
+  color: rgb(0, 51, 102);
 }
 
 .site-title {
   display: inline-block;
   text-align: center;
   margin: 30px auto;
-  color: green;
-  border: 5px solid rgb(250, 142, 142);;
+  color: rgb(255, 204, 0);
   padding: 20px;
+  font-size: 60px;
 }
 
 .main-user {
-  color: darkmagenta;
+  color: rgb(0, 51, 102);
   font-size: 25px;
   font-weight: 900;
 }
 
-.pages-list {
-  color: darkmagenta;
-  font-size: 20px;
+.sidebar-column {
+    padding: 20px;              
+    border-radius: 20px;
+    margin-top: 40px;
+    box-sizing: border-box;
 }
 
-.pages-link {
-  text-decoration: none;
-  color: darkmagenta;
-  border: 4px dashed rgb(250, 142, 142);
-  padding: 10px;
-  font-weight: 700;
+.content-column {
+    padding: 20px;              
+    border-radius: 20px;
+    margin-top: 40px;
+    border: 5px solid rgb(0, 64, 255);
+    box-sizing: border-box;
+    text-align: center;
 }
 
+.footer {
+  background-color: rgb(255, 204, 0);
+}
+
+.pagination-container {
+    display: flex; 
+    justify-content: center; 
+}
